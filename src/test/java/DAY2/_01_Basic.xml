@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="">
+    <test name="">
+        <classes>
+            <class name="DAY2._01_GroupsIntellijVersion"></class>
+        </classes>
+    </test>
+</suite>
