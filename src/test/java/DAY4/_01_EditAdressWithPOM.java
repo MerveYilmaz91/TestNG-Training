@@ -28,16 +28,17 @@ public class _01_EditAdressWithPOM extends BaseDriver {
 
         AdressOptimizationPage aop = new AdressOptimizationPage();
 
-        aop.firstNameInput.sendKeys("merve");
-        aop.lastNameInput.sendKeys("yılmaz");
-        aop.address1Input.sendKeys("kartal");
-        aop.cityInput.sendKeys("ist");
-        aop.postcodeInput.sendKeys("33333");
+        aop.clearSendKeys(aop.firstNameInput,"merve");
+        aop.clearSendKeys(aop.lastNameInput,"yılmaz");
+        aop.clearSendKeys(aop.address1Input,"kartal");
+        aop.clearSendKeys(aop.cityInput,"ist");
+        aop.clearSendKeys(aop.postcodeInput,"33333");
 
-        aop.countrySelect.selectByVisibleText("Turkey");
-        aop.regionSelect.selectByVisibleText("Istanbul");
+        aop.returnSelect(aop.countrySelect).selectByVisibleText("Turkey");
+        aop.returnSelect(aop.regionSelect).selectByVisibleText("İzmir");
 
         aop.continueButton.click();
+
         abp.checkSuccessMessage();
         abp.log("Adress oluşturuldu");
 
@@ -57,8 +58,8 @@ public class _01_EditAdressWithPOM extends BaseDriver {
         aop.clearSendKeys(aop.cityInput,"İstanbul");
         aop.clearSendKeys(aop.postcodeInput,"34200");
 
-        aop.countrySelect.selectByVisibleText("Turkey");
-        aop.regionSelect.selectByVisibleText("Istanbul");
+        aop.returnSelect(aop.countrySelect).selectByVisibleText("Turkey");
+        aop.returnSelect(aop.regionSelect).selectByVisibleText("İstanbul");
 
         aop.continueButton.click();
 
@@ -79,10 +80,6 @@ public class _01_EditAdressWithPOM extends BaseDriver {
 
     }
 
-    public void checkSuccessMessage() {
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(".alert-success"))));
-        Assert.assertTrue(driver.findElement(By.cssSelector(".alert-success")).getText().contains("success"));
-    }
 
 }
 

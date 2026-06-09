@@ -31,10 +31,16 @@ public class AdressOptimizationPage {
     public WebElement continueButton;
 
     @FindBy(id = "input-country")
-    public Select countrySelect;
+    public WebElement countrySelect;
 
     @FindBy(id = "input-zone")
-    public Select regionSelect;
+    public WebElement regionSelect;
+
+    public Select returnSelect(WebElement element) {
+        Select select = new Select(element);
+        return select;
+
+    }
 
     public void clearSendKeys(WebElement element, String value) {
         element.clear();
