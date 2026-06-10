@@ -1,11 +1,10 @@
 package DAY1;
 
-import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class _01_Annotations {
+public class _02_Annotations {
 
     /*
     * priority = öncelik tanımlama

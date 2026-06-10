@@ -2,7 +2,7 @@ package DAY1;
 
 import org.testng.annotations.*;
 
-public class _03_Annontation {
+public class _03_Annotation {
 
     @BeforeClass
     public void beforeClass(){ System.out.println("Before Class çalıştı");}

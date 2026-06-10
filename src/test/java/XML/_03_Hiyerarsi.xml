@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Hiyerarsi">
+    <test name="DAY1">
+        <classes>
+            <class name="DAY1._01_Intro"></class>
+            <class name="DAY1._02_Annotations"></class>
+            <class name="DAY1._03_Annotation"></class>
+            <class name="DAY1._04_Assertions"></class>
+        </classes>
+    </test>
+    <test name="DAY2>">
+        <classes>
+            <class name="DAY2._01_GroupsIntellijVersion"></class>
+            <class name="DAY2._02_BaseDriverIntro"></class>
+            <class name="DAY2._03_LoginTest2"></class>
+            <class name="DAY2._04_EditAdress"></class>
+        </classes>
+    </test>
+    
+
+</suite>
