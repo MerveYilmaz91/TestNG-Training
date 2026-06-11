@@ -10,28 +10,29 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class _01_EditAdressWithPOM extends BaseDriver {
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void login() { loginOperation();}
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void beforeMethod(){ driver.get(AdressBookPage.url); }
 
-    //Adres ekleme
-    @Test()
+    @Parameters({"firstName","lastName","city"})
+    @Test(groups = {"regression"})
     public void setAddress() {
         AdressBookPage abp = new AdressBookPage();
         abp.newAdressButton.click();
 
         AdressOptimizationPage aop = new AdressOptimizationPage();
 
-        aop.clearSendKeys(aop.firstNameInput,"merve");
-        aop.clearSendKeys(aop.lastNameInput,"yılmaz");
+        aop.clearSendKeys(aop.firstNameInput,"firstName");
+        aop.clearSendKeys(aop.lastNameInput,"lastName");
         aop.clearSendKeys(aop.address1Input,"kartal");
-        aop.clearSendKeys(aop.cityInput,"ist");
+        aop.clearSendKeys(aop.cityInput,"city");
         aop.clearSendKeys(aop.postcodeInput,"33333");
 
         aop.returnSelect(aop.countrySelect).selectByVisibleText("Turkey");
@@ -70,7 +71,7 @@ public class _01_EditAdressWithPOM extends BaseDriver {
 
     //adres silme
 
-    @Test(dependsOnMethods = {"editAdress"})
+    @Test(groups = {"regression"})
     public void deleteAdress(){
 
         AdressBookPage abp = new AdressBookPage();

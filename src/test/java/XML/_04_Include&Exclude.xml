@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Test 1">
+    <test name="Include">
+        <classes>
+            <class name="DAY3._02_AddToCart">
+                <methods>
+                    <include name="addAnItemFromMainPage"></include>
+                    <include name="deleteItemsInCart"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Exclude">
+        <classes>
+            <class name="DAY3._02_AddToCart">
+                <methods>
+                    <exclude name="addAnItemFromMainPage"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

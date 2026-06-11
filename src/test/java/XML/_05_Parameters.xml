@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Test 1">
+
+    <listeners>
+        <listener class-name="Utility.BaseDriver"/>
+    </listeners>
+
+    <test name="Edit Address">
+        <parameter name="firstName" value="Hakan"></parameter>
+        <parameter name="lastName" value="Yılmaz"></parameter>
+        <parameter name="city" value="Ankara"></parameter>
+        <classes>
+            <class name="DAY4._01_EditAdressWithPOM">
+                <methods>
+                    <include name="setAddress"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

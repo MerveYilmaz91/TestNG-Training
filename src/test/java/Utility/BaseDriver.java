@@ -3,11 +3,14 @@ package Utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
@@ -16,8 +19,18 @@ public class BaseDriver {
     public static WebDriverWait wait;
     public static JavascriptExecutor js;
 
-    @BeforeClass
-    public void initialOperations() {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun = true)
+    public void initialOperations(@Optional("Chrome") String browser) {
+        switch (browser) {
+            case "chrome":
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            case "firefox":
+                WebDriverManager.chromedriver().setup();
+                driver = new FirefoxDriver();
+                break;
+        }
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.manage().window().maximize();

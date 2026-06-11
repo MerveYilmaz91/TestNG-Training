@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Test">
+    <test name="Regression">
+        <groups>
+            <run>
+                <include name="regression"></include>
+            </run>
+        </groups>
+        <parameter name="firstName" value="merve"></parameter>
+        <parameter name="lastName" value="yılmaz"></parameter>
+        <parameter name="city" value="antalya"></parameter>
+        <classes>
+            <class name="DAY4._01_EditAdressWithPOM"></class>
+        </classes>
+    </test>
+</suite>
